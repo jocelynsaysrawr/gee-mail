@@ -23,6 +23,12 @@
         	subjectBox.innerHTML = geemails[i].subject;
         	subjects.appendChild(subjectBox);
 
+        	var dateBox = document.createElement("div");
+        	dateBox.className = "dateLine";
+        	dateBox.innerHTML = geemails[i].date;
+        	dates.appendChild(dateBox);
+
+
         }
 
       };
@@ -38,6 +44,9 @@
 			</section>
 			<section id="subjects">
 				<h4>Subject</h4>
+			</section>
+			<section id="dates">
+				<h4>Date</h4>
 			</section>
 		</div>
 	</body>

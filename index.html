@@ -7,12 +7,38 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
         
+        for(var i = 0; i < geemails.length; i++){
+
+        //	var mainBox = document.createElement("div");
+        // 	mainBox.className = "title";
+         //	document.getElementById("main").appendChild(mainBox);
+
+        	var senderBox = document.createElement("div");
+        	senderBox.className = "senderName";
+        	senderBox.innerHTML = geemails[i].sender;
+        	senderName.appendChild(senderBox);
+
+        	var subjectBox = document.createElement("div");
+        	subjectBox.className = "subjectLine";
+        	subjectBox.innerHTML = geemails[i].subject;
+        	subjects.appendChild(subjectBox);
+
+        }
+
       };
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
-			Build Me!
+			<header>
+				<h1>Gee-Mail</h1>
+			</header>
+			<section id="senderName">
+				<h2>Sender</h2>
+			</section>
+			<section id="subjects">
+				<h4>Subject</h4>
+			</section>
 		</div>
 	</body>
 </html>

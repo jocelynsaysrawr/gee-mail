@@ -28,6 +28,11 @@
         	dateBox.innerHTML = geemails[i].date;
         	dates.appendChild(dateBox);
 
+        	var bodyBox = document.createElement("div");
+        	bodyBox.className = "bodyLine";
+        	bodyBox.innerHTML = geemails[i].body;
+        	bodyContent.appendChild(bodyBox);
+
 
         }
 
@@ -40,13 +45,16 @@
 				<h1>Gee-Mail</h1>
 			</header>
 			<section id="senderName">
-				<h2>Sender</h2>
+				<h4>Sender</h4>
 			</section>
 			<section id="subjects">
 				<h4>Subject</h4>
 			</section>
 			<section id="dates">
 				<h4>Date</h4>
+			</section>
+			<section id="bodyContent">
+				<h4>Body</h4>
 			</section>
 		</div>
 	</body>

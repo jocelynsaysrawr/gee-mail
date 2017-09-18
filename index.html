@@ -10,21 +10,25 @@
         
         for(var i = 0; i < geemails.length; i++){
 
+        	var mainBox = document.createElement("div");
+        	mainBox.className = "mainPage";
+        	document.getElementById("main").appendChild(mainBox);
+
   
         	var senderBox = document.createElement("div");
         	senderBox.className = "senderName";
-        	senderBox.innerHTML = geemails[i].sender;
-        	senderNames.appendChild(senderBox);
+        	senderBox.innerHTML = "From: " + geemails[i].sender;
+        	mainBox.appendChild(senderBox);
+
+        		var dateBox = document.createElement("div");
+        	dateBox.className = "dateLine";
+        	dateBox.innerHTML = "Date: " + geemails[i].date;
+        	mainBox.appendChild(dateBox);
 
         	var subjectBox = document.createElement("div");
         	subjectBox.className = "subjectLine";
-        	subjectBox.innerHTML = geemails[i].subject;
-        	subjects.appendChild(subjectBox);
-
-        	var dateBox = document.createElement("div");
-        	dateBox.className = "dateLine";
-        	dateBox.innerHTML = geemails[i].date;
-        	dates.appendChild(dateBox);
+        	subjectBox.innerHTML = "Subject: " + geemails[i].subject;
+        	mainBox.appendChild(subjectBox);
 
         	var bodyBox = document.createElement("p");
         	bodyBox.className = "bodyLine";
@@ -58,15 +62,6 @@
 			<header>
 				<h1>Gee-Mail</h1>
 			</header>
-			<section id="senderNames">
-				<h4>Sender</h4>
-			</section>
-			<section id="dates">
-				<h4>Date</h4>
-			</section>
-			<section id="subjects">
-				<h4>Subject</h4>
-			</section>
 		</div>
 	</body>
 </html>

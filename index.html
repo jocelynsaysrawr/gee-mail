@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<title>GeeMail</title>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
@@ -9,14 +10,11 @@
         
         for(var i = 0; i < geemails.length; i++){
 
-        //	var mainBox = document.createElement("div");
-        // 	mainBox.className = "title";
-         //	document.getElementById("main").appendChild(mainBox);
-
+  
         	var senderBox = document.createElement("div");
         	senderBox.className = "senderName";
         	senderBox.innerHTML = geemails[i].sender;
-        	senderName.appendChild(senderBox);
+        	senderNames.appendChild(senderBox);
 
         	var subjectBox = document.createElement("div");
         	subjectBox.className = "subjectLine";
@@ -28,13 +26,29 @@
         	dateBox.innerHTML = geemails[i].date;
         	dates.appendChild(dateBox);
 
-        	var bodyBox = document.createElement("div");
+        	var bodyBox = document.createElement("p");
         	bodyBox.className = "bodyLine";
         	bodyBox.innerHTML = geemails[i].body;
-        	bodyContent.appendChild(bodyBox);
+        	subjectBox.appendChild(bodyBox);
 
 
         }
+
+        var getSubject = document.getElementsByClassName("subjectLine");
+        for(var j = 0; j < getSubject.length; j++){
+        	console.log(getSubject[j]);
+        	getSubject[j].addEventListener("click", hideElem);
+        	
+        }
+
+        function hideElem(){
+					var bodyElem = this.querySelectorAll(".bodyLine")[0];
+					if(bodyElem.style.display === "none"){
+						bodyElem.style.display = "block";
+					}else{
+					bodyElem.style.display = "none";
+					}
+				}
 
       };
     </script>
@@ -44,17 +58,14 @@
 			<header>
 				<h1>Gee-Mail</h1>
 			</header>
-			<section id="senderName">
+			<section id="senderNames">
 				<h4>Sender</h4>
-			</section>
-			<section id="subjects">
-				<h4>Subject</h4>
 			</section>
 			<section id="dates">
 				<h4>Date</h4>
 			</section>
-			<section id="bodyContent">
-				<h4>Body</h4>
+			<section id="subjects">
+				<h4>Subject</h4>
 			</section>
 		</div>
 	</body>

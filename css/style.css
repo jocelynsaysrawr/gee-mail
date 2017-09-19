@@ -2,7 +2,33 @@
 	border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
+#notepad{
+	z-index: -1;
+}
+
 .bodyLine{
 	display: none;
 	font-weight: normal;
+}
+
+.mainPage{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.senderName{
+	flex: 1;
+	order: 1;
+}
+
+.dateLine{
+	flex: 2;
+	order: 2;
+}
+
+.subjectLine{
+	flex: 4;
+	order: 3;
 }

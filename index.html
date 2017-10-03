@@ -8,6 +8,7 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+
         
         for(var i = 0; i < geemails.length; i++){
 
@@ -55,12 +56,20 @@
 					}
 				}
 
+
+        var count = document.createElement("div");
+        count.id = "count";
+        count.innerHTML = "Inbox: " + "(" + geemails.length + ")";
+        mainHeader.appendChild(count);
+
+      	
+
       };
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
-			<header>
+			<header id="mainHeader">
 				<h1>Gee-Mail</h1>
 			</header>
 		</div>

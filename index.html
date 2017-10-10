@@ -93,6 +93,9 @@
         	addBodyBox.style.display = "none";
         	addSubjectBox.appendChild(addBodyBox);
 
+        	 getMailCount++;
+        document.getElementById("count").innerHTML = "Inbox: " + "(" + getMailCount + ")";
+
         
 
         var getNewSubject = document.getElementsByClassName("addSubjectLine");
@@ -113,8 +116,9 @@
 
 			}
 
-        setInterval(newMessage, 9000);
+        setInterval(newMessage, 5000);
 
+       
       };
     </script>
 	</head>

@@ -6,13 +6,14 @@ body{
 	background-color: #d6a2a9;
 }
 
-.bodyLine{
-	display: none;
-	font-weight: normal;
-	font-family: 'Open-Sans', sans-serif;
+.mainPage{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
 }
 
-.mainPage{
+.addMainPage{
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-around;
@@ -62,12 +63,43 @@ body{
 	color: #212227;
 }
 
+.addSubjectLine{
+	flex: 4;
+	order: 3;
+	align-self: flex-start;
+	color: white;
+	background-color: #BA2130;
+	font-family: 'Open-Sans', sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	padding: 10px;
+}
+
+.addSubjectLine:hover{
+	background-color: white;
+	color: #212227;
+}
+
 .bodyLine{
 	border: 2px solid gray;
 	background-color: LightGray;
 	color: #212227;
 	//opacity: 0.9;
 	padding: 15px 15px;
+	display: none;
+	font-weight: normal;
+	font-family: 'Open-Sans', sans-serif;
+}
+
+.addBodyLine{
+	border: 2px solid gray;
+	background-color: LightGray;
+	color: #212227;
+	//opacity: 0.9;
+	padding: 15px 15px;
+	display: none;
+	font-weight: normal;
+	font-family: 'Open-Sans', sans-serif;
 }
 
 header{

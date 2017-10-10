@@ -56,13 +56,64 @@
 					}
 				}
 
+				var getMailCount = geemails.length;
 
         var count = document.createElement("div");
         count.id = "count";
-        count.innerHTML = "Inbox: " + "(" + geemails.length + ")";
+        count.innerHTML = "Inbox: " + getMailCount;
         mainHeader.appendChild(count);
 
-      	
+        var addMail = getNewMessage();
+        //console.log(addMail);
+
+        function newMessage() {
+
+        	var addMainBox = document.createElement("div");
+        	addMainBox.className = "addMainPage";
+        	main.appendChild(addMainBox);
+
+        	var addSenderBox = document.createElement("div");
+        	addSenderBox.className = "senderName";
+        	addSenderBox.innerHTML = "From: " + addMail.sender;
+        	addMainBox.appendChild(addSenderBox);
+
+        	var addDateBox = document.createElement("div");
+        	addDateBox.className = "dateLine";
+        	addDateBox.innerHTML = "Date: " + addMail.date;
+        	addMainBox.appendChild(addDateBox);
+
+        	var addSubjectBox = document.createElement("div");
+        	addSubjectBox.className = "addSubjectLine";
+        	addSubjectBox.innerHTML = "Subject: " + addMail.subject;
+        	addMainBox.appendChild(addSubjectBox);
+
+        	var addBodyBox = document.createElement("p");
+        	addBodyBox.className = "addBodyLine";
+        	addBodyBox.innerHTML = addMail.body;
+        	addBodyBox.style.display = "none";
+        	addSubjectBox.appendChild(addBodyBox);
+
+        
+
+        var getNewSubject = document.getElementsByClassName("addSubjectLine");
+        for(var j = 0; j < getNewSubject.length; j++){
+        	console.log(getNewSubject[j]);
+        	getNewSubject[j].addEventListener("click", hideNewElem);
+        }
+        	
+
+        function hideNewElem(){
+					var newBodyElem = this.querySelectorAll(".addBodyLine")[0];
+					if(newBodyElem.style.display === "none"){
+						newBodyElem.style.display = "block";
+					}else{
+					newBodyElem.style.display = "none";
+					}
+				}
+
+			}
+
+        setInterval(newMessage, 9000);
 
       };
     </script>
